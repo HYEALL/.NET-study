@@ -14,9 +14,13 @@ namespace Test1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+            int a = 42;
+            int b = 119;
+            int c = a + b;
+            MessageBox.Show(c.ToString());
         }
     }
 }

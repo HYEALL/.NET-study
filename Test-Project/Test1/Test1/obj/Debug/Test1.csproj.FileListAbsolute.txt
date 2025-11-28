@@ -1,1 +1,8 @@
 C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\bin\Debug\Test1.exe.config
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\bin\Debug\Test1.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\bin\Debug\Test1.pdb
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\obj\Debug\Test1.csprojResolveAssemblyReference.cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\obj\Debug\Test1.Properties.Resources.resources
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\obj\Debug\Test1.csproj.GenerateResource.Cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\obj\Debug\Test1.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\Test1\Test1\obj\Debug\Test1.pdb
