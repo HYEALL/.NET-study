@@ -16,5 +16,10 @@ namespace Test1
         {
             InitializeComponent();
         }
+
+        private void btnClickThis_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Hello!";
+        }
     }
 }
