@@ -32,11 +32,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.backgroundButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.showButton = new System.Windows.Forms.Button();
+            this.backgroundButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,30 +96,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1145, 58);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(678, 3);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
-            this.closeButton.TabIndex = 0;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
-            // 
-            // backgroundButton
-            // 
-            this.backgroundButton.AutoSize = true;
-            this.backgroundButton.Location = new System.Drawing.Point(759, 3);
-            this.backgroundButton.Name = "backgroundButton";
-            this.backgroundButton.Size = new System.Drawing.Size(163, 23);
-            this.backgroundButton.TabIndex = 1;
-            this.backgroundButton.Text = "Set the background coolor";
-            this.backgroundButton.UseVisualStyleBackColor = true;
-            // 
             // clearButton
             // 
             this.clearButton.AutoSize = true;
@@ -129,6 +105,7 @@
             this.clearButton.TabIndex = 2;
             this.clearButton.Text = "Clear the picture";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // showButton
             // 
@@ -139,6 +116,33 @@
             this.showButton.TabIndex = 3;
             this.showButton.Text = "Show a picture";
             this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            // 
+            // backgroundButton
+            // 
+            this.backgroundButton.AutoSize = true;
+            this.backgroundButton.Location = new System.Drawing.Point(759, 3);
+            this.backgroundButton.Name = "backgroundButton";
+            this.backgroundButton.Size = new System.Drawing.Size(163, 23);
+            this.backgroundButton.TabIndex = 1;
+            this.backgroundButton.Text = "Set the background color";
+            this.backgroundButton.UseVisualStyleBackColor = true;
+            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(678, 3);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.TabIndex = 0;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // openFileDialog1
             // 
@@ -146,7 +150,6 @@
             this.openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
     "s (*.*)|*.*";
             this.openFileDialog1.Title = "그림 파일";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // PhotoApp
             // 
