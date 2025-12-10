@@ -1,0 +1,9 @@
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\bin\Debug\PhotoApp.exe.config
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\bin\Debug\PhotoApp.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\bin\Debug\PhotoApp.pdb
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.csprojResolveAssemblyReference.cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.PhotoApp.resources
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.Properties.Resources.resources
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.csproj.GenerateResource.Cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\PhotoApp\PhotoApp\obj\Debug\PhotoApp.pdb
