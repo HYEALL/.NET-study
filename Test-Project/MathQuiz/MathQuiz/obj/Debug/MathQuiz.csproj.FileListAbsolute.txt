@@ -1,0 +1,9 @@
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\bin\Debug\MathQuiz.exe.config
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\bin\Debug\MathQuiz.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\bin\Debug\MathQuiz.pdb
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.csprojResolveAssemblyReference.cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.MathQuiz.resources
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.Properties.Resources.resources
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.csproj.GenerateResource.Cache
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.exe
+C:\Users\euneun\source\repos\.NET-study\Test-Project\MathQuiz\MathQuiz\obj\Debug\MathQuiz.pdb
