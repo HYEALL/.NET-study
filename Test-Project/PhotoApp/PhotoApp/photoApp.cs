@@ -23,6 +23,9 @@ namespace PhotoApp
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Load(openFileDialog1.FileName);
+            } else
+            {
+                label1.Text = "close";
             }
         }
 
