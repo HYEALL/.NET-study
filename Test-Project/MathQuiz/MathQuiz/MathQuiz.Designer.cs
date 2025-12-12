@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.plusRightLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Sum = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.sum = new System.Windows.Forms.NumericUpDown();
+            this.difference = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.minusRightLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Sum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             this.SuspendLayout();
             // 
             // timeLabel
@@ -101,37 +103,27 @@
             this.label4.Text = "+";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Sum
+            // sum
             // 
-            this.Sum.Font = new System.Drawing.Font("Gulim", 18F);
-            this.Sum.Location = new System.Drawing.Point(300, 82);
-            this.Sum.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.Sum.Name = "Sum";
-            this.Sum.Size = new System.Drawing.Size(120, 35);
-            this.Sum.TabIndex = 6;
-            this.Sum.Value = new decimal(new int[] {
+            this.sum.Font = new System.Drawing.Font("Gulim", 18F);
+            this.sum.Location = new System.Drawing.Point(300, 82);
+            this.sum.Name = "sum";
+            this.sum.Size = new System.Drawing.Size(120, 35);
+            this.sum.TabIndex = 6;
+            this.sum.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
             // 
-            // numericUpDown1
+            // difference
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Gulim", 18F);
-            this.numericUpDown1.Location = new System.Drawing.Point(300, 132);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 35);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.difference.Font = new System.Drawing.Font("Gulim", 18F);
+            this.difference.Location = new System.Drawing.Point(300, 132);
+            this.difference.Name = "difference";
+            this.difference.Size = new System.Drawing.Size(120, 35);
+            this.difference.TabIndex = 11;
+            this.difference.Value = new decimal(new int[] {
             100,
             0,
             0,
@@ -185,6 +177,12 @@
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start the quiz";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MathQuiz
             // 
@@ -192,12 +190,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.difference);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.minusRightLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.minusLeftLabel);
-            this.Controls.Add(this.Sum);
+            this.Controls.Add(this.sum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.plusRightLabel);
             this.Controls.Add(this.label2);
@@ -208,8 +206,8 @@
             this.MaximizeBox = false;
             this.Name = "MathQuiz";
             this.Text = "MathQuiz";
-            ((System.ComponentModel.ISupportInitialize)(this.Sum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,13 +221,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label plusRightLabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown Sum;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown sum;
+        private System.Windows.Forms.NumericUpDown difference;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label minusRightLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label minusLeftLabel;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
