@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Syncfusion.WinForms.DataGrid;
 
 namespace DataGrid
 {
@@ -15,6 +16,8 @@ namespace DataGrid
         public Form1()
         {
             InitializeComponent();
+            OrderInfoCollection orderInfoCollection = new OrderInfoCollection();
+            sfDataGrid1.DataSource = orderInfoCollection.Orders;
         }
     }
 }

@@ -6,7 +6,6 @@ C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.DataSource.WinForms.dll
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.GridCommon.WinForms.dll
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.Licensing.dll
-C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.SfDataGrid.WinForms.dll
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.SfInput.WinForms.dll
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.SfListView.WinForms.dll
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\bin\Debug\Syncfusion.Shared.Base.dll
@@ -23,3 +22,4 @@ C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\obj\Debug
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\obj\Debug\DataGrid.csproj.GenerateResource.Cache
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\obj\Debug\DataGrid.exe
 C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\obj\Debug\DataGrid.pdb
+C:\Users\euneun\source\repos\.NET-study\Test-Project\DataGrid\DataGrid\obj\Debug\DataGrid.csprojResolveAssemblyReference.cache
