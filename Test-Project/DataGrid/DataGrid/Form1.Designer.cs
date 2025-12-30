@@ -35,9 +35,18 @@
             // sfDataGrid1
             // 
             this.sfDataGrid1.AccessibleName = "Table";
+            this.sfDataGrid1.AddNewRowPosition = Syncfusion.WinForms.DataGrid.Enums.RowPosition.Bottom;
+            this.sfDataGrid1.AllowDeleting = true;
+            this.sfDataGrid1.AllowFiltering = true;
+            this.sfDataGrid1.AllowTriStateSorting = true;
+            this.sfDataGrid1.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
             this.sfDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sfDataGrid1.Location = new System.Drawing.Point(0, 0);
             this.sfDataGrid1.Name = "sfDataGrid1";
+            this.sfDataGrid1.SelectionMode = Syncfusion.WinForms.DataGrid.Enums.GridSelectionMode.Extended;
+            this.sfDataGrid1.SelectionUnit = Syncfusion.WinForms.DataGrid.Enums.SelectionUnit.Cell;
+            this.sfDataGrid1.ShowGroupDropArea = true;
+            this.sfDataGrid1.ShowSortNumbers = true;
             this.sfDataGrid1.Size = new System.Drawing.Size(799, 493);
             this.sfDataGrid1.Style.DragPreviewRowStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.sfDataGrid1.Style.DragPreviewRowStyle.RowCountIndicatorTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
