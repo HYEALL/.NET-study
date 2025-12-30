@@ -40,6 +40,7 @@ namespace DataGrid
         }
         public OrderInfo()
         {
+
         }
         public OrderInfo(int orderId, string customerName, string country, string customerId, string shipCity)
         {

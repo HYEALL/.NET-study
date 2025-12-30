@@ -44,7 +44,6 @@
             this.sfDataGrid1.Location = new System.Drawing.Point(0, 0);
             this.sfDataGrid1.Name = "sfDataGrid1";
             this.sfDataGrid1.SelectionMode = Syncfusion.WinForms.DataGrid.Enums.GridSelectionMode.Extended;
-            this.sfDataGrid1.SelectionUnit = Syncfusion.WinForms.DataGrid.Enums.SelectionUnit.Cell;
             this.sfDataGrid1.ShowGroupDropArea = true;
             this.sfDataGrid1.ShowSortNumbers = true;
             this.sfDataGrid1.Size = new System.Drawing.Size(799, 493);
