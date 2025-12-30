@@ -38,6 +38,9 @@ namespace DataGrid
             get { return shippingCity; }
             set { shippingCity = value; }
         }
+        public OrderInfo()
+        {
+        }
         public OrderInfo(int orderId, string customerName, string country, string customerId, string shipCity)
         {
             this.OrderID = orderId;
