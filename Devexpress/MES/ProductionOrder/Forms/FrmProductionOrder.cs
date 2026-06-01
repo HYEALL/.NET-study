@@ -61,6 +61,7 @@ namespace MES.Forms
         private bool _isNew     = false;
         private bool _isDirty   = false;
         private string _editingId = null;
+        private bool _isBinding = false;
 
         // ───────────────────────────────────────
         // 생성자
@@ -80,32 +81,32 @@ namespace MES.Forms
         private void LoadDummyData()
         {
             var dt = new DataTable();
-            dt.Columns.Add("PROD_ORDER_ID");
-            dt.Columns.Add("ITEM_ID");
-            dt.Columns.Add("ITEM_NAME");
-            dt.Columns.Add("ORDER_QTY");
-            dt.Columns.Add("PLAN_START_DATE");
-            dt.Columns.Add("PLAN_END_DATE");
-            dt.Columns.Add("PRIORITY_NM");
-            dt.Columns.Add("STATUS");
-            dt.Columns.Add("STATUS_NM");
-            dt.Columns.Add("TOTAL_LOT_CNT");
-            dt.Columns.Add("GOOD_QTY");
-            dt.Columns.Add("CUSTOMER_ORDER_ID");
-            dt.Columns.Add("REMARK");
-            dt.Columns.Add("PRIORITY");
+            dt.Columns.Add("PROD_ORDER_ID", typeof(string));
+            dt.Columns.Add("ITEM_ID", typeof(string));
+            dt.Columns.Add("ITEM_NAME", typeof(string));
+            dt.Columns.Add("ORDER_QTY", typeof(decimal));   
+            dt.Columns.Add("PLAN_START_DATE", typeof(DateTime));  
+            dt.Columns.Add("PLAN_END_DATE", typeof(DateTime));  
+            dt.Columns.Add("PRIORITY_NM", typeof(string));
+            dt.Columns.Add("STATUS", typeof(string));
+            dt.Columns.Add("STATUS_NM", typeof(string));
+            dt.Columns.Add("TOTAL_LOT_CNT", typeof(int));
+            dt.Columns.Add("GOOD_QTY", typeof(decimal));
+            dt.Columns.Add("CUSTOMER_ORDER_ID", typeof(string));
+            dt.Columns.Add("REMARK", typeof(string));
+            dt.Columns.Add("PRIORITY", typeof(string));
 
             dt.Rows.Add("PO-20241101-0001", "ITM-1001", "전자제어모듈 A형",
-                        500, "2024-11-01", "2024-11-10",
-                        "긴급", "DONE", "완료", 3, 490, "CO-88821", "", "HIGH");
+                        500m, new DateTime(2024, 11, 1), new DateTime(2024, 11, 10),
+                        "긴급", "DONE", "완료", 3, 490m, "CO-88821", "", "HIGH");
 
             dt.Rows.Add("PO-20241105-0001", "ITM-1001", "전자제어모듈 A형",
-                        1200, "2024-11-05", "2024-11-20",
-                        "보통", "RUN", "진행중", 5, 300, "CO-88850", "", "NORMAL");
+                        1200m, new DateTime(2024, 11, 5), new DateTime(2024, 11, 20),
+                        "보통", "RUN", "진행중", 5, 300m, "CO-88850", "", "NORMAL");
 
             dt.Rows.Add("PO-20241115-0001", "ITM-2045", "센서 하우징 B형",
-                        300, "2024-11-15", "2024-11-22",
-                        "낮음", "WAIT", "대기", 0, 0, "", "", "LOW");
+                        300m, new DateTime(2024, 11, 15), new DateTime(2024, 11, 22),
+                        "낮음", "WAIT", "대기", 0, 0m, "", "", "LOW");
 
             gridList.DataSource = dt;
         }
@@ -248,7 +249,6 @@ namespace MES.Forms
             viewList = new GridView();
             gridList.MainView = viewList;
             gridList.ViewCollection.AddRange(new BaseView[] { viewList });
-            this.Controls.Add(gridList);
 
             // 뷰 옵션
             viewList.OptionsView.ShowGroupPanel        = false;
@@ -274,6 +274,8 @@ namespace MES.Forms
             // 상태 셀 컬러링
             viewList.RowCellStyle += ViewList_RowCellStyle;
             viewList.FocusedRowChanged += ViewList_FocusedRowChanged;
+
+            this.Controls.Add(gridList);
         }
 
         private void AddGridColumn(GridView view, string fieldName, string caption,
@@ -493,13 +495,16 @@ namespace MES.Forms
         // ───────────────────────────────────────
         // 그리드 행 선택 → 입력 패널 바인딩
         // ───────────────────────────────────────
+        // 수정 코드
         private void ViewList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            if (_isDirty) return;   // 편집 중에는 그리드 이동 무시
+            if (_isDirty) return;
+            if (e.FocusedRowHandle < 0) return; 
 
-            var row = viewList.GetFocusedDataRow();
-            if (row == null) return;
+            var rowView = viewList.GetFocusedRow() as System.Data.DataRowView;
+            if (rowView == null) return;
 
+            var row = rowView.Row;
             _editingId = row["PROD_ORDER_ID"].ToString();
             BindInputPanel(row);
             SetButtonState(editable: false, selected: true);
@@ -507,27 +512,44 @@ namespace MES.Forms
 
         private void BindInputPanel(DataRow row)
         {
-            lblOrderId.Text             = row["PROD_ORDER_ID"].ToString();
-            lblStatus.Text              = row["STATUS_NM"].ToString();
-            cboItemInput.EditValue      = row["ITEM_ID"].ToString();
-            spnOrderQty.EditValue       = Convert.ToDecimal(row["ORDER_QTY"]);
-            dtpPlanStart.EditValue      = Convert.ToDateTime(row["PLAN_START_DATE"]);
-            dtpPlanEnd.EditValue        = Convert.ToDateTime(row["PLAN_END_DATE"]);
-            cboPriorityInput.EditValue  = MapPriorityToDisplay(row["PRIORITY"].ToString());
-            txtCustomerOrderId.EditValue= row["CUSTOMER_ORDER_ID"];
-            txtRemark.EditValue         = row["REMARK"];
+            if (row == null) return;
 
-            // 상태 컬러 표시
-            /*lblStatus.ForeColor = row["STATUS"].ToString() switch
+            _isBinding = true;  
+
+            lblOrderId.Text = row["PROD_ORDER_ID"]?.ToString();
+            lblStatus.Text = row["STATUS_NM"]?.ToString();
+
+            cboItemInput.EditValue = row["ITEM_ID"]?.ToString();
+
+            spnOrderQty.EditValue = row["ORDER_QTY"] == DBNull.Value
+                ? 0m : Convert.ToDecimal(row["ORDER_QTY"]);
+
+            dtpPlanStart.EditValue = row["PLAN_START_DATE"] == DBNull.Value
+                ? DateTime.Today : Convert.ToDateTime(row["PLAN_START_DATE"]);
+
+            dtpPlanEnd.EditValue = row["PLAN_END_DATE"] == DBNull.Value
+                ? DateTime.Today : Convert.ToDateTime(row["PLAN_END_DATE"]);
+
+            cboPriorityInput.EditValue = MapPriorityToDisplay(row["PRIORITY"]?.ToString());
+
+            txtCustomerOrderId.EditValue = row["CUSTOMER_ORDER_ID"] == DBNull.Value
+                ? "" : row["CUSTOMER_ORDER_ID"].ToString();
+
+            txtRemark.EditValue = row["REMARK"] == DBNull.Value
+                ? "" : row["REMARK"].ToString();
+
+            switch (row["STATUS"]?.ToString())
             {
-                "RUN"    => Color.FromArgb(39, 174, 96),
-                "DONE"   => Color.FromArgb(52, 152, 219),
-                "CANCEL" => Color.FromArgb(192, 57, 43),
-                "HOLD"   => Color.FromArgb(230, 126, 34),
-                _        => Color.FromArgb(127, 140, 141)
-            };*/
+                case "RUN": lblStatus.ForeColor = Color.FromArgb(39, 174, 96); break;
+                case "DONE": lblStatus.ForeColor = Color.FromArgb(52, 152, 219); break;
+                case "CANCEL": lblStatus.ForeColor = Color.FromArgb(192, 57, 43); break;
+                case "HOLD": lblStatus.ForeColor = Color.FromArgb(230, 126, 34); break;
+                default: lblStatus.ForeColor = Color.FromArgb(127, 140, 141); break;
+            }
 
             SetEditEnabled(false);
+
+            _isBinding = false;  
         }
 
         // ───────────────────────────────────────
@@ -587,18 +609,18 @@ namespace MES.Forms
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             if (_isDirty &&
-                XtraMessageBox.Show("변경 내용을 취소하시겠습니까?", "확인",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+        XtraMessageBox.Show("변경 내용을 취소하시겠습니까?", "확인",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            _isNew   = false;
+            _isNew = false;
             _isDirty = false;
             SetEditEnabled(false);
             SetButtonState(editable: false, selected: _editingId != null);
 
-            // 그리드에서 다시 바인딩
-            var row = viewList.GetFocusedDataRow();
-            if (row != null) BindInputPanel(row);
+
+            var rowView = viewList.GetFocusedRow() as DataRowView;
+            if (rowView != null) BindInputPanel(rowView.Row);
             else ClearInputPanel();
         }
 
@@ -684,6 +706,7 @@ namespace MES.Forms
         // ───────────────────────────────────────
         private void CboItemInput_EditValueChanged(object sender, EventArgs e)
         {
+            if (_isBinding) return;  
             _isDirty = true;
         }
 
