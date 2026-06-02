@@ -87,3 +87,4 @@ C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\de\DevExpress.Office
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\es\DevExpress.Office.v19.1.Core.resources.dll
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\ja\DevExpress.Office.v19.1.Core.resources.dll
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\ru\DevExpress.Office.v19.1.Core.resources.dll
+C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\obj\Debug\ProductionOrder.Forms.FrmProductionOrder_new.resources
