@@ -120,6 +120,12 @@
     <Compile Include="Forms\FrmProductionOrder_new.Designer.cs">
       <DependentUpon>FrmProductionOrder_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWorkOrder.Designer.cs">
+      <DependentUpon>FrmWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ProductionOrderModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +139,9 @@
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Forms\FrmProductionOrder_new.resx">
       <DependentUpon>FrmProductionOrder_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWorkOrder.resx">
+      <DependentUpon>FrmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
     <None Include="Properties\Settings.settings">

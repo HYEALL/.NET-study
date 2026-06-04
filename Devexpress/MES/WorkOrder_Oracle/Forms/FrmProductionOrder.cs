@@ -83,7 +83,9 @@ namespace MES.Forms
             AddCol("BOM_ITEM_CODE", "품목코드", 150);
             AddCol("BOM_ITEM_DESCRIPTION", "품목명", 250);
             AddCol("WORK_ORDER_QTY", "생산지시량", 100, "N0");
+            AddCol("WORK_ORDER_NET_QTY", "순투입량", 80, "NO");
             AddCol("WORK_ORDER_STATUS_DESC", "상태", 80);
+            AddCol("REMARK", "비고", 250);
 
             this.Controls.Add(grid_Main);
         }

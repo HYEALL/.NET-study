@@ -117,12 +117,6 @@ namespace MES.DAL
                 }
             }
             */
-            private object ToDbValue(object val)
-            {
-                if (val == null) return DBNull.Value;
-                if (val is string s && string.IsNullOrWhiteSpace(s)) return DBNull.Value;
-                return val;
-            }
         }
     }
 }
