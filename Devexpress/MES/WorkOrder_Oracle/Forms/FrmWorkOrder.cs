@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils;
-using static MES.DAL.OracleBaseDAL;
+using MES.DAL;
 
 namespace MES.Forms
 {

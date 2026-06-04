@@ -51,72 +51,73 @@ namespace MES.DAL
             return val;
         }
 
-        /// <summary>
-        /// 생산지시 DAL
-        /// </summary>
-        public class ProductionOrderOracleDAL : OracleBaseDAL
+    }
+
+    /// <summary>
+    /// 생산지시 DAL
+    /// </summary>
+    public class ProductionOrderOracleDAL : OracleBaseDAL
+    {
+        public DataTable SelectList(decimal sobId, decimal orgId, decimal orderLineId)
         {
-            public DataTable SelectList(decimal sobId, decimal orgId, decimal orderLineId)
+            using (var conn = GetConnection())
+            using (var cmd = CreateCommand(conn, "WIP_WORK_ORDER_G.WORK_ORDER_SELECT"))
             {
-                using (var conn = GetConnection())
-                using (var cmd = CreateCommand(conn, "WIP_WORK_ORDER_G.WORK_ORDER_SELECT"))
-                {
-                    var cursor = cmd.Parameters.Add("P_CURSOR", OracleDbType.RefCursor);
-                    cursor.Direction = ParameterDirection.Output;
+                var cursor = cmd.Parameters.Add("P_CURSOR", OracleDbType.RefCursor);
+                cursor.Direction = ParameterDirection.Output;
 
-                    cmd.Parameters.Add("P_SOB_ID", OracleDbType.Decimal).Value = sobId;
-                    cmd.Parameters.Add("P_ORG_ID", OracleDbType.Decimal).Value = orgId;
-                    cmd.Parameters.Add("P_ORDER_LINE_ID", OracleDbType.Decimal).Value = orderLineId;
+                cmd.Parameters.Add("P_SOB_ID", OracleDbType.Decimal).Value = sobId;
+                cmd.Parameters.Add("P_ORG_ID", OracleDbType.Decimal).Value = orgId;
+                cmd.Parameters.Add("P_ORDER_LINE_ID", OracleDbType.Decimal).Value = orderLineId;
 
-                    var adapter = new OracleDataAdapter(cmd);
-                    var dt = new DataTable();
-                    adapter.Fill(dt);
-                    return dt;
-                }
+                var adapter = new OracleDataAdapter(cmd);
+                var dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
             }
-
-            /*
-            public string Insert(ProductionOrderModel model, string userId)
-            {
-                using (var conn = GetConnection())
-                using (var cmd = CreateCommand(conn, "USP_PRODUCTION_ORDER_INSERT"))
-                {
-                    cmd.Parameters.Add("p_item_id", OracleDbType.Varchar2, 50).Value
-                        = model.ItemId;
-                    cmd.Parameters.Add("p_order_qty", OracleDbType.Decimal).Value
-                        = model.OrderQty;
-                    cmd.Parameters.Add("p_plan_start_date", OracleDbType.Date).Value
-                        = model.PlanStartDate;
-                    cmd.Parameters.Add("p_user_id", OracleDbType.Varchar2, 50).Value
-                        = userId;
-
-                    // OUT 파라미터 (채번된 ID 반환)
-                    var outParam = cmd.Parameters.Add("p_prod_order_id", OracleDbType.Varchar2, 50);
-                    outParam.Direction = ParameterDirection.Output;
-
-                    cmd.ExecuteNonQuery();
-
-                    return outParam.Value?.ToString();
-                }
-            }
-            public void UpdateStatus(string prodOrderId, string status, string userId, string remark = null)
-            {
-                using (var conn = GetConnection())
-                using (var cmd = CreateCommand(conn, "USP_PRODUCTION_ORDER_STATUS_UPDATE"))
-                {
-                    cmd.Parameters.Add("p_prod_order_id", OracleDbType.Varchar2, 50).Value = prodOrderId;
-                    cmd.Parameters.Add("p_status", OracleDbType.Varchar2, 20).Value = status;
-                    cmd.Parameters.Add("p_user_id", OracleDbType.Varchar2, 50).Value = userId;
-                    cmd.Parameters.Add("p_remark", OracleDbType.Varchar2, 500).Value = ToDbValue(remark);
-
-                    // [차이10] 트랜잭션 처리
-                    // MSSQL:  프로시저 안에서 BEGIN TRANSACTION / COMMIT
-                    // Oracle: 프로시저 안에서 COMMIT / ROLLBACK
-                    //         C# 코드에서는 동일하게 ExecuteNonQuery() 호출
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            */
         }
+
+        /*
+        public string Insert(ProductionOrderModel model, string userId)
+        {
+            using (var conn = GetConnection())
+            using (var cmd = CreateCommand(conn, "USP_PRODUCTION_ORDER_INSERT"))
+            {
+                cmd.Parameters.Add("p_item_id", OracleDbType.Varchar2, 50).Value
+                    = model.ItemId;
+                cmd.Parameters.Add("p_order_qty", OracleDbType.Decimal).Value
+                    = model.OrderQty;
+                cmd.Parameters.Add("p_plan_start_date", OracleDbType.Date).Value
+                    = model.PlanStartDate;
+                cmd.Parameters.Add("p_user_id", OracleDbType.Varchar2, 50).Value
+                    = userId;
+
+                // OUT 파라미터 (채번된 ID 반환)
+                var outParam = cmd.Parameters.Add("p_prod_order_id", OracleDbType.Varchar2, 50);
+                outParam.Direction = ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+
+                return outParam.Value?.ToString();
+            }
+        }
+        public void UpdateStatus(string prodOrderId, string status, string userId, string remark = null)
+        {
+            using (var conn = GetConnection())
+            using (var cmd = CreateCommand(conn, "USP_PRODUCTION_ORDER_STATUS_UPDATE"))
+            {
+                cmd.Parameters.Add("p_prod_order_id", OracleDbType.Varchar2, 50).Value = prodOrderId;
+                cmd.Parameters.Add("p_status", OracleDbType.Varchar2, 20).Value = status;
+                cmd.Parameters.Add("p_user_id", OracleDbType.Varchar2, 50).Value = userId;
+                cmd.Parameters.Add("p_remark", OracleDbType.Varchar2, 500).Value = ToDbValue(remark);
+
+                // [차이10] 트랜잭션 처리
+                // MSSQL:  프로시저 안에서 BEGIN TRANSACTION / COMMIT
+                // Oracle: 프로시저 안에서 COMMIT / ROLLBACK
+                //         C# 코드에서는 동일하게 ExecuteNonQuery() 호출
+                cmd.ExecuteNonQuery();
+            }
+        }
+        */
     }
 }
