@@ -75,6 +75,7 @@ namespace ProductionOrder.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gridControl2);
+            this.Controls.Add(this.gridControl1);
             this.Name = "FrmProductionOrder_new";
             this.Text = "FrmProductionOrder_new";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
