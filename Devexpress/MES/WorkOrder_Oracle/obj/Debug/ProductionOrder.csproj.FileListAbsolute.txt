@@ -113,4 +113,4 @@ C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\System.Text.Encoding
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\System.Text.Json.xml
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\bin\Debug\System.ValueTuple.xml
-C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\obj\Debug\ProductionOrder.Forms.FrmWorkOrder.resources
+C:\04.ERP_TEST_v.G\Devexpress\MES\ProductionOrder\obj\Debug\MES.Forms.FrmWorkOrder.resources

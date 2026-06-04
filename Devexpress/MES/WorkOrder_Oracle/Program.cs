@@ -23,7 +23,8 @@ namespace ProductionOrder
             try
             {
                 AppSession.UserId = "test_user";
-                Application.Run(new FrmProductionOrder());
+                //Application.Run(new FrmProductionOrder());
+                Application.Run(new FrmWorkOrder());
             }
             catch (Exception ex)
             {
