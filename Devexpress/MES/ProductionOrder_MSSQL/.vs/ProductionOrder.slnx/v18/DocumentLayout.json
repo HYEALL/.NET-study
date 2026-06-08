@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|c:\\devexpress\\netstudy\\.net-study\\devexpress\\mes\\productionorder_mssql\\forms\\frmworkorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|solutionrelative:forms\\frmworkorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\forms\\frmworkorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|solutionrelative:forms\\frmworkorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\dal\\productionorderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|solutionrelative:dal\\productionorderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\models\\productionordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD942BDE-A5A2-46BC-849B-186804E75E2E}|ProductionOrder.csproj|solutionrelative:models\\productionordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-06-08T03:47:50.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmWorkOrder.cs",
+              "DocumentMoniker": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\Forms\\FrmWorkOrder.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmWorkOrder.cs",
+              "ToolTip": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\Forms\\FrmWorkOrder.cs",
+              "RelativeToolTip": "Forms\\FrmWorkOrder.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAADwvy0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T03:44:59.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmWorkOrder.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\Forms\\FrmWorkOrder.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmWorkOrder.cs",
+              "ToolTip": "C:\\Devexpress\\ProductionOrder\\Forms\\FrmWorkOrder.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ProductionOrder\\Forms\\FrmWorkOrder.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T03:44:55.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductionOrderModel.cs",
+              "DocumentMoniker": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\Models\\ProductionOrderModel.cs",
+              "RelativeDocumentMoniker": "Models\\ProductionOrderModel.cs",
+              "ToolTip": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\Models\\ProductionOrderModel.cs",
+              "RelativeToolTip": "Models\\ProductionOrderModel.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwvzsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T03:43:45.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAL\\ProductionOrderDAL.cs",
+              "DocumentMoniker": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\DAL\\ProductionOrderDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\ProductionOrderDAL.cs",
+              "ToolTip": "C:\\Devexpress\\netstudy\\.NET-study\\Devexpress\\MES\\ProductionOrder_MSSQL\\DAL\\ProductionOrderDAL.cs",
+              "RelativeToolTip": "DAL\\ProductionOrderDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T03:42:17.749Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
